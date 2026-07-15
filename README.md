@@ -42,3 +42,17 @@ cd ..
 
 # Step 10 — Run server
 python manage.py runserver
+
+## Project Screenshots
+
+### Home Page
+![Home](Screenshot%202026-07-15%20090951.png)
+
+### Prediction Page
+![Prediction](Screenshot%202026-07-15%20091007.png)
+
+### Results
+![Results](Screenshot%202026-07-15%20091018.png)
+
+### Dashboard
+![Dashboard](Screenshot%202026-07-15%20091028.png)
