@@ -1,0 +1,89 @@
+/* =============================================
+   TransformerWatch — Custom Stylesheet
+   ============================================= */
+
+/* Utility classes */
+.fw-500 { font-weight: 500; }
+.fw-600 { font-weight: 600; }
+
+/* Sidebar scroll */
+#sidebar {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+#sidebar::-webkit-scrollbar { width: 4px; }
+#sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 4px; }
+
+/* Form controls */
+.form-control:focus, .form-select:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79,70,229,0.12);
+}
+
+/* Buttons */
+.btn { border-radius: 8px; font-weight: 500; font-size: 0.875rem; }
+.btn-primary { background: #4f46e5; border-color: #4f46e5; }
+.btn-primary:hover { background: #4338ca; border-color: #4338ca; }
+
+/* Card hover */
+.stat-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.stat-card:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+/* Table hover */
+.table tbody tr:hover { background-color: #f8fafc; }
+
+/* Badge styles */
+.badge-normal  { background-color: #dcfce7 !important; color: #166534 !important; }
+.badge-warning { background-color: #fef9c3 !important; color: #854d0e !important; }
+.badge-critical{ background-color: #fee2e2 !important; color: #991b1b !important; }
+.badge-offline { background-color: #f1f5f9 !important; color: #475569 !important; }
+
+/* Alert banner pulse for active alerts */
+@keyframes pulse-red {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.3); }
+    50%       { box-shadow: 0 0 0 6px rgba(239,68,68,0); }
+}
+.badge-blink { animation: pulse-red 2s infinite; }
+
+/* Gauge progress bars */
+.gauge-bar { height: 10px; border-radius: 999px; background: #f1f5f9; overflow: hidden; }
+.gauge-fill { height: 100%; border-radius: 999px; transition: width 0.5s ease; }
+
+/* Responsive sidebar collapse */
+@media (max-width: 768px) {
+    #sidebar { transform: translateX(-100%); position: fixed; }
+    #sidebar.show { transform: translateX(0); }
+    #main-content { margin-left: 0 !important; }
+}
+
+/* Page transitions */
+.page-content { animation: fadeIn 0.3s ease; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Live indicator dot */
+.live-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: livePulse 1.5s infinite;
+}
+@keyframes livePulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+}
+
+/* DGA gas level color bands */
+.gas-normal  { color: #10b981; }
+.gas-caution { color: #f59e0b; }
+.gas-danger  { color: #ef4444; }
+
+/* Print styles for reports */
+@media print {
+    #sidebar, .topbar, .btn, .dropdown { display: none !important; }
+    #main-content { margin-left: 0 !important; }
+}
